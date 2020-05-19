@@ -242,16 +242,16 @@ var Controller = (function(BudgetCtrl, UICtrl) {
       .querySelector(DOM.DOMstrings.container)
       .addEventListener("click", deleteItem);
     if (localStorage.getItem("data")) {
-      var data = JSON.parse(localStorage.getItem("data"));
-      BudgetCtrl.setData(data);
+      var data1 = JSON.parse(localStorage.getItem("data"));
+      BudgetCtrl.setData(data1);
       UICtrl.displayBudget({
-        budget: data.budget || 0,
-        percentage: data.percentage || 0,
-        expense: data.totals.exp || 0,
-        income: data.totals.inc || 0
+        budget: data1.budget || 0,
+        percentage: data1.percentage || 0,
+        expense: data1.totals.exp || 0,
+        income: data1.totals.inc || 0
       });
-      data.allItems["exp"].forEach(item => UICtrl.addListItem(item, "exp"));
-      data.allItems["inc"].forEach(item => UICtrl.addListItem(item, "inc"));
+      data1.allItems["exp"].forEach(item => UICtrl.addListItem(item, "exp"));
+      data1.allItems["inc"].forEach(item => UICtrl.addListItem(item, "inc"));
     } else {
       UICtrl.displayBudget({
         budget: 0,
