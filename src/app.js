@@ -242,7 +242,7 @@ var Controller = (function(BudgetCtrl, UICtrl) {
       .querySelector(DOM.DOMstrings.container)
       .addEventListener("click", deleteItem);
     if (localStorage.getItem("data")) {
-      let data = JSON.parse(localStorage.getItem("data"));
+      var data = JSON.parse(localStorage.getItem("data"));
       BudgetCtrl.setData(data);
       UICtrl.displayBudget({
         budget: data.budget || 0,
