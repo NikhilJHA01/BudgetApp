@@ -244,8 +244,6 @@ var Controller = (function(BudgetCtrl, UICtrl) {
     if (localStorage.getItem("data")) {
       let data = JSON.parse(localStorage.getItem("data"));
       BudgetCtrl.setData(data);
-
-      // data = JSON.parse(data);
       UICtrl.displayBudget({
         budget: data.budget || 0,
         percentage: data.percentage || 0,
