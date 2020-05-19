@@ -109,7 +109,7 @@ var BudgetController = (function() {
       localStorage.setItem("data", JSON.stringify(data));
     },
     setData(localStorageData) {
-      data = Object.assign(data, localStorageData);
+      Object.assign(data, localStorageData);
     },
     testing() {
       console.log(data);
@@ -242,7 +242,7 @@ var Controller = (function(BudgetCtrl, UICtrl) {
       .querySelector(DOM.DOMstrings.container)
       .addEventListener("click", deleteItem);
     if (localStorage.getItem("data")) {
-      data = JSON.parse(localStorage.getItem("data"));
+      let data = JSON.parse(localStorage.getItem("data"));
       BudgetCtrl.setData(data);
 
       // data = JSON.parse(data);
